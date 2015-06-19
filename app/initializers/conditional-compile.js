@@ -8,7 +8,7 @@ var initializer = {
   name: 'ember-cli-conditional-compile-helpers',
   initialize: function(container, application) {
     Object.keys(feature_flags).map(function(flag) {
-      Ember.Handlebars.registerHelper('if-flag-' + flag, function(options) {
+      Ember.HTMLBars.registerHelper('if-flag-' + flag, function(options) {
         if (feature_flags[flag]) {
           return options.fn(this);
         } else {
